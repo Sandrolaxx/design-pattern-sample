@@ -17,7 +17,7 @@ public class Application {
     public static void main(String[] args) {
         IGUIFactory factory;
 
-        String theme = "light";
+        String theme = "dark";
 
         if (theme.equals("light")) {
             factory = new LightThemeFactory();
