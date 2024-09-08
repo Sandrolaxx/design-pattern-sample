@@ -188,7 +188,7 @@ public class Application {
 
 ### Quando utilizar?🤔
 
-O Abstract Factory é útil quando:
+Abstract Factory é útil quando:
 - Você precisa criar famílias de objetos relacionados ou dependentes sem especificar suas classes concretas.
 - A família de objetos precisa ser facilmente substituível ou configurável, como no caso de temas de interface gráfica.
 - Você deseja que o sistema seja facilmente extensível para suportar novas famílias de objetos (como adicionar novos temas no futuro) sem modificar o código existente.
