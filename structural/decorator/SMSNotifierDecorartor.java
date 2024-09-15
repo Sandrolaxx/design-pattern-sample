@@ -14,7 +14,7 @@ class SMSNotifierDecorator extends NotifierDecorator {
     }
 
     private void sendSMS(String message) {
-        System.out.println("Enviando SMS: " + message);
+        System.out.println("Enviando SMS📲: " + message);
     }
 
 }

@@ -188,9 +188,19 @@ public class Application {
 
 ### Quando utilizar?🤔
 
-Abstract Factory é útil quando:
+**Abstract Factory** é útil quando:
 - Você precisa criar famílias de objetos relacionados ou dependentes sem especificar suas classes concretas.
 - A família de objetos precisa ser facilmente substituível ou configurável, como no caso de temas de interface gráfica.
 - Você deseja que o sistema seja facilmente extensível para suportar novas famílias de objetos (como adicionar novos temas no futuro) sem modificar o código existente.
+
+---
+
+### Utilização mundo real🌎
+
+- **Java Swing**: Usa o padrão para permitir a criação de diferentes temas e estilos de interface gráfica. A classe `UIManager` pode usar uma fábrica concreta de `LookAndFeel` para criar componentes que se adaptam ao estilo visual do sistema operacional ou a um tema específico.
+- **Java Persistence API (JPA)**: Utilizado criar instâncias de `EntityManagerFactory` e `EntityManager`. Diferentes provedores de persistência (Hibernate, EclipseLink, etc.) podem fornecer suas próprias implementações de fábrica, permitindo que a mesma API seja usada para interagir com diferentes sistemas de persistência.
+- **Frameworks de Injeção de Dependência (DI)**: Frameworks de DI como Spring e Guice utilizam o padrão para criar e configurar componentes e serviços. Eles fornecem fábricas abstratas para a criação de beans e dependências, permitindo que diferentes configurações e estilos de injeção sejam aplicados sem alterar o código cliente
+
+---
 
 Esse padrão é frequentemente usado em bibliotecas de interface gráfica, sistemas de plug-ins, e frameworks onde é necessário fornecer um conjunto de funcionalidades relacionadas, mantendo a flexibilidade para mudanças e expansões futuras.

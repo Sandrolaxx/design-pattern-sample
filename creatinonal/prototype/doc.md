@@ -127,7 +127,6 @@ public class WarGame {
     }
 }
 ```
-
 1. Criação de uma unidade Soldado
 2. Clonando o Soldado para criar uma nova unidade
 3. Criação de uma unidade Tanque
@@ -149,9 +148,19 @@ public class WarGame {
 
 ### Quando utilizar?🤔
 
-Prototype é útil quando:
+**Prototype** é útil quando:
 - O custo de criar uma nova instância de um objeto é significativo em termos de tempo ou recursos.
 - O sistema requer a criação de objetos que são variações ou cópias de um conjunto existente de objetos.
 - Você deseja evitar a duplicação de código ao criar objetos semelhantes ou com pequenas modificações.
+
+---
+
+### Utilização mundo real🌎
+
+- **Java Object Cloning**: A interface `Cloneable` e o método `clone()` da classe `Object` são exemplos diretos do padrão Prototype. Muitas bibliotecas e frameworks utilizam clonagem para criar cópias de objetos com um custo menor do que a criação a partir do zero.
+- **Graphics Libraries**: Bibliotecas de gráficos, como Java 2D API, frequentemente utilizam o padrão Prototype para criar cópias de formas e objetos gráficos. Em vez de criar novas instâncias com todos os parâmetros necessários, elas podem clonar objetos existentes para reutilizar propriedades e estados gráficos.
+- **Document Editors**: Editores de documentos e ferramentas de design, como processadores de texto ou editores de imagens, podem usar o padrão Prototype para criar novos documentos ou designs baseados em templates existentes.
+
+---
 
 Esse padrão é frequentemente utilizado em jogos, editores gráficos, e sistemas de CAD, onde a criação e manipulação de objetos complexos precisam ser rápidas e eficientes.

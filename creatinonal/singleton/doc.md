@@ -90,4 +90,14 @@ Singleton é útil em cenários onde:
 - A instância deve ser acessível globalmente.
 - É importante controlar o acesso ao recurso compartilhado para evitar problemas de concorrência.
 
+---
+
+### Utilização mundo real🌎
+
+- **Java Runtime Environment (JRE)**: Classe `Runtime` fornece um ponto de acesso global para a instância atual da máquina virtual Java e permite interagir com o ambiente de execução (como obter a memória livre, executar comandos, etc.). A instância é acessada através do método Runtime.getRuntime().
+- **Java Logging API**: A classe `Logger` da API de logging (java.util.logging) é usada como um Singleton para garantir que há uma única instância de logger para uma determinada configuração.
+- **Spring Framework**: Padrão é usado para gerenciar beans com escopo Singleton. O contexto da aplicação (`ApplicationContext`) gerencia essas instâncias de beans, garantindo que apenas uma instância de cada bean seja criada e usada ao longo da vida útil da aplicação.
+
+---
+
 Exemplos incluem gerenciamento de configurações globais, acesso a recursos compartilhados (como loggers ou conexão com banco de dados), e implementação de caches globais.

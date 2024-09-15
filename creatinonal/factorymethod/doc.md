@@ -144,9 +144,20 @@ public class NotificationService {
 
 ### Quando utilizar?🤔
 
-Factory Method é útil quando:
+**Factory Method** é útil quando:
 - Você deseja permitir que subclasses decidam qual classe concreta instanciar.
 - Você precisa de flexibilidade para adicionar novos tipos de objetos sem modificar o código existente.
 - Você deseja evitar acoplamento rígido entre a lógica de aplicação e a lógica de criação de objetos.
+
+---
+
+### Utilização mundo real🌎
+
+- **Java Logging API**: A API de logging do Java (`java.util.logging`) usa o padrão para criar instâncias de `Logger` e `Handler`. O método estático Logger.getLogger() e os métodos de fábrica de Handler permitem criar e configurar loggers e manipuladores específicos.
+- **Apache HttpClient**: Utiliza para criar instâncias de `HttpClient`. A classe `HttpClientBuilder` fornece métodos de fábrica para configurar e construir instâncias de HttpClient com diferentes configurações e políticas.
+- **JUnit**: O framework de testes JUnit utiliza o padrão Factory Method para criar instâncias de testes. A classe `TestFactory` ou métodos de fábrica em implementações de teste permitem a criação de diferentes tipos de testes e suas configurações.
+- **Jackson (Lib de parse JSON)**: Utilizado para criar instâncias de `ObjectMapper`. A classe ObjectMapper fornece métodos de fábrica para criar e configurar objetos para serialização e desserialização de JSON.
+
+---
 
 Esse padrão é frequentemente utilizado em frameworks onde as bibliotecas precisam criar objetos, mas a aplicação deve decidir a classe concreta a ser usada. Por exemplo, em bibliotecas GUI (interfaces gráficas de usuário), onde o framework pode precisar criar janelas ou botões, mas a aplicação decide a aparência e o comportamento exatos desses componentes.

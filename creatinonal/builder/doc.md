@@ -134,9 +134,18 @@ Builder é útil quando:
 - Você deseja evitar construtores telescópicos (construtores com um número excessivo de parâmetros).
 - Você deseja criar objetos imutáveis de forma segura e fácil.
 
-Esse padrão é frequentemente utilizado em situações onde um objeto pode ser configurado de diferentes maneiras, como na criação de objetos de configuração, documentos complexos, ou em sistemas onde é necessário ocultar a complexidade da construção de um objeto para simplificar o código cliente.
+---
+
+### Utilização mundo real🌎
+
+- **Java StringBuilder**: Ela permite construir strings de forma eficiente, especialmente quando você precisa concatenar várias partes. Em vez de criar múltiplas instâncias de String (que são imutáveis), você usa StringBuilder para construir a string passo a passo e, em seguida, obter o resultado final.
+- **Java Streams API**: Classe `Stream` permite criar pipelines de operações (como filter, map, collect) de forma fluida e imutável. O método collect é particularmente notável, pois pode usar diferentes tipos de Collector para construir o resultado final (como listas, conjuntos, mapas).
+- **JavaFX**: Utiliza para criar interfaces gráficas de usuário. Por exemplo, a classe `FXMLLoader` pode usar um FXML file (um tipo de configuração XML) para construir e configurar a interface gráfica.
+- **Apache Camel**: Apache Camel é um framework de integração que utiliza o padrão Builder para configurar rotas e pipelines de integração. As rotas podem ser configuradas usando um `RouteBuilder`, onde você define as regras e processos de integração passo a passo.
 
 ---
+
+Esse padrão é frequentemente utilizado em situações onde um objeto pode ser configurado de diferentes maneiras, como na criação de objetos de configuração, documentos complexos, ou em sistemas onde é necessário ocultar a complexidade da construção de um objeto para simplificar o código cliente.
 
 ### Builder com Director🎬
 

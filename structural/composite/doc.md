@@ -48,7 +48,7 @@ class File implements IFileSystemComponent {
     }
 }
 ```
-1. Representa um arquivo, que é um elemento "folha"
+1. Representa um arquivo, que é um elemento folha (node)
 
 ```java
 import java.util.ArrayList;
@@ -134,7 +134,7 @@ public class Application {
 
 - **Tratamento uniforme**: O **Composite** permite tratar objetos individuais (arquivos) e compostos (pastas) de forma uniforme, ou seja, ambos podem ser manipulados de maneira semelhante.
 - **Hierarquia recursiva**: Com esse padrão, você pode criar estruturas hierárquicas de objetos, onde cada objeto composto pode conter outros objetos simples ou compostos.
-- **Facilidade de extensão**: É fácil adicionar novos tipos de componentes (por exemplo, um **Atalho** ou **Link Simbólico**) sem precisar modificar o código existente.
+- **Facilidade de extensão**: É fácil adicionar novos tipos de componentes (por exemplo, um **Atalho** ou **Link simbólico**) sem precisar modificar o código existente.
 
 ---
 
@@ -144,5 +144,14 @@ public class Application {
 - Quando você precisa representar uma estrutura hierárquica de objetos, como árvores ou grafos.
 - Quando deseja tratar de forma uniforme objetos individuais e composições de objetos.
 - Quando há a necessidade de realizar operações em toda a hierarquia de forma recursiva (por exemplo, calcular o tamanho total, exibir detalhes, etc.).
+
+---
+
+### Utilização mundo real🌎
+
+- **Java AWT/Swing**: Utilizado para gerenciar hierarquias de componentes gráficos. **Componentes individuais**: JButton, JLabel, etc. **Composições**: JPanel, JFrame, que podem conter outros componentes (inclusive outros painéis ou janelas). Essas composições permitem que um painel (JPanel) contenha múltiplos botões, rótulos e outros componentes, todos tratados uniformemente como "componentes". 
+- **Componentes de Jogos (Unity, Unreal Engine)**: No desenvolvimento de jogos é frequentemente utilizado para representar hierarquias de objetos no mundo do jogo. Por exemplo, em Unity, um objeto de jogo (GameObject) pode conter outros objetos (children), e todos compartilham a mesma interface para transformações, como mover ou rotacionar.
+
+---
 
 Em resumo, é ideal para problemas onde você tem uma estrutura de componentes que pode ser composta de outros componentes, permitindo a criação de árvores ou hierarquias complexas.

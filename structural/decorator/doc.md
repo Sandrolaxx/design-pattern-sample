@@ -1,6 +1,6 @@
 # Decorator
 
-### Cenário de problema
+### Cenário de problema🪆
 
 Imagine que você tem um sistema de **notificações**. A notificação básica envia mensagens via e-mail. No entanto, você deseja adicionar a capacidade de enviar mensagens via SMS e registrar as notificações em um log. Usar o **Decorator** permite adicionar essas funcionalidades de forma flexível e modular.
 
@@ -29,7 +29,7 @@ interface INotifier {
 class EmailNotifier implements INotifier {
     @Override
     public void send(String message) {
-        System.out.println("Enviando e-mail: " + message);
+        System.out.println("Enviando e-mail📨: " + message);
     }
 }
 ```
@@ -66,7 +66,7 @@ class SMSNotifierDecorator extends NotifierDecorator {
     }
 
     private void sendSMS(String message) {
-        System.out.println("Enviando SMS: " + message);
+        System.out.println("Enviando SMS📲: " + message);
     }
 }
 ```
@@ -132,5 +132,15 @@ public class Application {
 - Quando você deseja adicionar responsabilidades ou funcionalidades adicionais a objetos individuais de maneira dinâmica.
 - Quando a extensão por herança não é viável ou cria uma complexidade excessiva.
 - Quando diferentes combinações de funcionalidades devem ser aplicadas a objetos, e criar subclasses para todas as combinações seria impraticável.
+
+---
+
+### Utilização mundo real🌎
+
+- **Java I/O**: Biblioteca Java é o sistema de classes de Input/Output (I/O). As classes de I/O utilizam Decorators para adicionar funcionalidades como buffering, compressão ou criptografia a streams de dados. **Abstração (Componente)**: `InputStream`, `OutputStream`. **Componente Concreto**: `FileInputStream`, `FileOutputStream`. **Decoradores**: `BufferedInputStream`, `DataInputStream`, `GZIPInputStream`.
+- **Spring Security**: Adicionar diferentes funcionalidades de segurança, como autenticação, autorização, e controle de acesso. Isso é feito por meio de `AuthenticationProvider` e `SecurityContext`, que são decoradores sobre a autenticação básica. [Para mais sobre](https://www.momentslog.com/development/design-pattern/exploring-the-decorator-pattern-in-spring-security-adding-custom-security-functionality-to-spring-security-framework).
+-  **Servlet API**: Para modificar ou estender a funcionalidade de requisições e respostas HTTP. Isso é feito por meio de `HttpServletRequestWrapper` e `HttpServletResponseWrapper`, que permitem "decorar" uma requisição ou resposta HTTP com funcionalidades adicionais(cabeçalhos extras, manipular parâmetros, etc).
+
+---
 
 Em resumo, é ideal em cenários onde a funcionalidade deve ser incrementada de forma flexível e dinâmica, como em sistemas de notificação, streams de I/O ou interfaces gráficas.

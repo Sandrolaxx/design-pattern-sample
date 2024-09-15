@@ -99,4 +99,15 @@ Adapter é útil quando:
 - Precisa padronizar múltiplos formatos ou protocolos.
 - É necessário converter tipos ou unidades entre sistemas.
 
+---
+
+### Utilização mundo real🌎
+
+- **Classes Streams I/O**: Na API de I/O do Java, há uma clara separação entre fluxos de bytes (como InputStream e OutputStream) e fluxos de caracteres (como Reader e Writer). O Adapter é utilizado para converter um fluxo de bytes em um fluxo de caracteres, e vice-versa.
+- **`Arrays.asList()`**: Converte arrays para listas.
+- **SLF4J**: Atua como adaptadores para diferentes sistemas de logging subjacentes, como Log4j, Java Util Logging (JUL), ou Logback.
+4. **JavaFX** e **Swing**: **SwingNode** adapta componentes Swing para serem usados no JavaFX.
+
+---
+
 **Adapter** é um padrão de design estrutural que permite que interfaces incompatíveis trabalhem juntas. Ele envolve a criação de um "adaptador" que converte a interface de uma classe em outra interface esperada pelo cliente, permitindo que classes com interfaces incompatíveis possam se comunicar.

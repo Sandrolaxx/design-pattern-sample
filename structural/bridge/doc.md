@@ -91,7 +91,6 @@ class Radio implements IDevice {
 ```
 1. Implementação concreta de um dispositivo: Rádio
 
-
 ```java
 //1
 class RemoteControl {
@@ -166,7 +165,7 @@ public class Application {
 
 - **Separação de abstração e implementação**: O **Bridge** permite separar a lógica de controle (como o controle remoto) da implementação específica de dispositivos (TV, rádio). Isso facilita a manutenção e extensão do sistema, permitindo adicionar novos controles ou dispositivos sem criar subclasses específicas para cada combinação.
   
-- **Facilidade de extensão**: Novos dispositivos ou tipos de controles podem ser adicionados sem alterar o código existente. Por exemplo, se surgir um novo dispositivo (um **Projeto de Som**) ou um novo controle (**Controle Inteligente**), eles podem ser adicionados independentemente.
+- **Facilidade de extensão**: Novos dispositivos ou tipos de controles podem ser adicionados sem alterar o código existente. Por exemplo, se surgir um novo dispositivo (uma **caixa de som**) ou um novo controle (**Controle Inteligente**), eles podem ser adicionados independentemente.
 
 - **Redução de subclasses**: Sem o padrão **Bridge**, seria necessário criar subclasses para cada combinação de controle e dispositivo (por exemplo, `ControleRemotoTV`, `ControleRemotoRadio`, etc.). O **Bridge** evita essa explosão de subclasses ao separar as duas hierarquias.
 
@@ -178,5 +177,14 @@ public class Application {
 - Você precisa evitar a criação de muitas subclasses ao combinar abstrações e implementações.
 - Você deseja que a abstração e a implementação possam variar de forma independente.
 - Você deseja aumentar a flexibilidade de um sistema que deve ser expansível no futuro (novos controles, novos dispositivos).
+
+---
+
+### Utilização mundo real🌎
+
+- **JDBC**: Interface genérica usada pelo desenvolvedor (como Connection, Statement, ResultSet) é a abstração. As diferentes implementações dos drivers de banco de dados (como MySQL, PostgreSQL, Oracle) são as implementações concretas. O JDBC permite que o código de acesso ao banco de dados funcione de maneira uniforme, independentemente do banco subjacente.
+- **AWT (Abstract Window Toolkit)**: Separa a interface gráfica (`Component`, `Graphics`) da implementação concreta que renderiza os componentes na tela. Isso permite que os mesmos componentes gráficos sejam renderizados de maneira diferente em diferentes plataformas (Windows, macOS, Linux) sem modificar a lógica dos componentes.
+
+---
 
 Em resumo, recomendado para sistemas que precisam lidar com várias abstrações e implementações que podem variar independentemente umas das outras.
