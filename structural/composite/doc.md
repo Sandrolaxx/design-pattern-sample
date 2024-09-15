@@ -16,20 +16,21 @@ O padrão **Composite** se aplica, permitindo que você construa hierarquias de 
 
 ### Exemplo em Java☕
 
-
 ```java
-// Interface que define operações comuns para arquivos e pastas
+//1
 interface IFileSystemComponent {
     void showDetails();
+
     int getSize();
 }
 ```
+1. Interface que define operações comuns para arquivos e pastas
 
 ```java
-// Representa um arquivo, que é um elemento "folha"
+//1
 class File implements IFileSystemComponent {
     private String name;
-    private int size;  // Tamanho do arquivo em KB
+    private int size;
 
     public File(String name, int size) {
         this.name = name;
@@ -37,7 +38,7 @@ class File implements IFileSystemComponent {
     }
 
     @Override
-    public void showDetails() {
+    public void showDetails() {//2
         System.out.println("Arquivo: " + name + " | Tamanho: " + size + "KB");
     }
 
@@ -47,13 +48,13 @@ class File implements IFileSystemComponent {
     }
 }
 ```
-
+1. Representa um arquivo, que é um elemento "folha"
 
 ```java
-// Representa uma pasta, que pode conter arquivos e outras pastas
 import java.util.ArrayList;
 import java.util.List;
 
+//1
 class Folder implements IFileSystemComponent {
     private String name;
     private List<IFileSystemComponent> components = new ArrayList<>();
@@ -88,50 +89,60 @@ class Folder implements IFileSystemComponent {
     }
 }
 ```
+1. Representa uma pasta, que pode conter arquivos e outras pastas
 
 ```java
 public class Application {
     public static void main(String[] args) {
-        // Criando arquivos
+        //1
         File file1 = new File("arquivo1.txt", 100);
         File file2 = new File("arquivo2.doc", 200);
         File file3 = new File("imagem.jpg", 500);
 
-        // Criando pastas
+        //2
         Folder folder1 = new Folder("Documentos");
         Folder folder2 = new Folder("Imagens");
         Folder rootFolder = new Folder("Raiz");
 
-        // Adicionando arquivos e subpastas à pasta
+        //3
         folder1.addComponent(file1);
         folder1.addComponent(file2);
         folder2.addComponent(file3);
 
-        // Adicionando pastas à pasta raiz
+        //4
         rootFolder.addComponent(folder1);
         rootFolder.addComponent(folder2);
 
-        // Mostrando detalhes da estrutura
+        //5
         rootFolder.showDetails();
 
-        // Calculando o tamanho total da pasta raiz
+        //6
         System.out.println("Tamanho total da pasta 'Raiz': " + rootFolder.getSize() + "KB");
     }
 }
 ```
+1. Criando arquivos
+2. Criando pastas
+3. Adicionando arquivos e subpastas à pasta
+4. Adicionando pastas à pasta raiz
+5. Mostrando detalhes da estrutura
+6. Calculando o tamanho total da pasta raiz
 
 ---
 
-### Utilização do Padrão Composite
+### Explicação🤓
 
-- **Tratamento Uniforme**: O **Composite** permite tratar objetos individuais (arquivos) e compostos (pastas) de forma uniforme, ou seja, ambos podem ser manipulados de maneira semelhante.
-- **Hierarquia Recursiva**: Com esse padrão, você pode criar estruturas hierárquicas de objetos, onde cada objeto composto pode conter outros objetos simples ou compostos.
-- **Facilidade de Extensão**: É fácil adicionar novos tipos de componentes (por exemplo, um **Atalho** ou **Link Simbólico**) sem precisar modificar o código existente.
+- **Tratamento uniforme**: O **Composite** permite tratar objetos individuais (arquivos) e compostos (pastas) de forma uniforme, ou seja, ambos podem ser manipulados de maneira semelhante.
+- **Hierarquia recursiva**: Com esse padrão, você pode criar estruturas hierárquicas de objetos, onde cada objeto composto pode conter outros objetos simples ou compostos.
+- **Facilidade de extensão**: É fácil adicionar novos tipos de componentes (por exemplo, um **Atalho** ou **Link Simbólico**) sem precisar modificar o código existente.
 
-### Quando Utilizar o Composite
+---
 
-- Quando você precisa representar uma estrutura hierárquica de objetos, como árvores ou gráficos.
+### Quando utilizar?🤔
+
+**Composite** é útil quando:
+- Quando você precisa representar uma estrutura hierárquica de objetos, como árvores ou grafos.
 - Quando deseja tratar de forma uniforme objetos individuais e composições de objetos.
 - Quando há a necessidade de realizar operações em toda a hierarquia de forma recursiva (por exemplo, calcular o tamanho total, exibir detalhes, etc.).
 
-O padrão **Composite** é ideal para problemas onde você tem uma estrutura de componentes que pode ser composta de outros componentes, permitindo a criação de árvores ou hierarquias complexas.
+Em resumo, é ideal para problemas onde você tem uma estrutura de componentes que pode ser composta de outros componentes, permitindo a criação de árvores ou hierarquias complexas.

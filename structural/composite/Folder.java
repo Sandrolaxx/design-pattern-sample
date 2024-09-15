@@ -23,18 +23,23 @@ class Folder implements IFileSystemComponent {
 
     @Override
     public void showDetails() {
+
         System.out.println("Pasta: " + name);
+
         for (IFileSystemComponent component : components) {
             component.showDetails();
         }
+
     }
 
     @Override
     public int getSize() {
         int totalSize = 0;
+        
         for (IFileSystemComponent component : components) {
             totalSize += component.getSize();
         }
+
         return totalSize;
     }
     
