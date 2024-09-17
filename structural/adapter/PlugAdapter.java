@@ -11,7 +11,7 @@ class PlugAdapter implements IUKPlug {
     @Override
     public void connectToUnitedKingdomSocket() {
         System.out.println("Usando um adaptador de tomada...🔄");
-
+        
         brPlug.connectToBrazilianSocket();
     }
 
