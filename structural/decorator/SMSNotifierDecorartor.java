@@ -2,8 +2,8 @@ package structural.decorator;
 
 class SMSNotifierDecorator extends NotifierDecorator {
 
-    public SMSNotifierDecorator(INotifier INotifier) {
-        super(INotifier);
+    public SMSNotifierDecorator(INotifier iNotifier) {
+        super(iNotifier);
     }
 
     @Override

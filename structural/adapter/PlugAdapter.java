@@ -13,6 +13,8 @@ class PlugAdapter implements IUKPlug {
         System.out.println("Usando um adaptador de tomada...🔄");
         
         brPlug.connectToBrazilianSocket();
+
+        System.out.println("Utilizando na tomada UK.");
     }
 
 }
