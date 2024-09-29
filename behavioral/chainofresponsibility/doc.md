@@ -19,7 +19,7 @@ O padrão **Chain of Responsibility** é ideal para este cenário porque permite
 Aqui está um exemplo da implementação do padrão Chain of Responsibility em Java:
 
 ```java
-// 1
+//1
 public abstract class Support {
 
     protected Support nextLevel;
@@ -35,7 +35,7 @@ public abstract class Support {
 1. Definimos uma classe abstrata `Support` que representa um nível de suporte. Ela contém um método abstrato `solveProblem` e uma referência ao próximo nível de suporte.
 
 ```java
-// 1
+//1
 public class TechnicalLevelOne extends Support {
 
     @Override
