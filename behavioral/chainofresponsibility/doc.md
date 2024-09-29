@@ -98,7 +98,7 @@ public class TechnicalLevelThree extends Support {
 Aqui está um exemplo de utilização do padrão Chain of Responsibility, onde simulamos diferentes tipos de problemas:
 
 ```java
-public class SupportClient {
+public class Application {
     public static void main(String[] args) {
         //1
         Support n1 = new TechnicalLevelOne();
@@ -135,7 +135,7 @@ public class SupportClient {
 
 - **Classe abstrata `Support`:** Define a interface para todos os níveis de suporte, com um método `solveProblem` e uma referência ao próximo nível na cadeia.
 - **Classes concretas (`TechnicalLevelOne`, `TechnicalLevelTwo`, `TechnicalLevelThree`):** Implementam a lógica para resolver problemas de diferentes níveis de complexidade. Cada nível tenta resolver o problema e, se não conseguir, passa o problema para o próximo.
-- **Cliente `SupportClient`:** Configura a cadeia de suporte e envia diferentes problemas para serem resolvidos, observando como cada nível de suporte interage.
+- **Cliente `Application`:** Configura a cadeia de suporte e envia diferentes problemas para serem resolvidos, observando como cada nível de suporte interage.
 
 ---
 

@@ -155,7 +155,7 @@ public class RemoteControl {
 Aqui está um exemplo de como utilizar o padrão Command para controlar uma luz com o controle remoto:
 
 ```java
-public class HomeAutomation {
+public class Application {
     public static void main(String[] args) {
         //1
         RemoteControl remoteControl = new RemoteControl(2);

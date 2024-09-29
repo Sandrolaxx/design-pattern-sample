@@ -1,6 +1,6 @@
 # Iterator
 
-### Cenário de problema🌞🌛
+### Cenário de problema🎞
 
 Imagine que você está desenvolvendo uma plataforma de streaming de vídeo. Nessa plataforma, os usuários podem criar listas de reprodução (playlists) com filmes e séries. Cada playlist pode conter diferentes tipos de conteúdo, como episódios de séries ou filmes completos.
 
@@ -22,11 +22,12 @@ Aqui está um exemplo da implementação do padrão Iterator em Java para navega
 // 1
 public interface Iterator<T> {
     boolean hasNext();
+
     T next();
 }
 ```
 
-1. Interface **Iterator** define os métodos principais para iteração: `hasNext()` para verificar se há mais elementos e `next()` para obter o próximo elemento.
+1. Interface **Iterator** define os métodos principais para iteração: `hasNext()` para verificar se há mais elementos e `next()` para obter o próximo elemento. Lembrando que é utilizado o conceito de [Generics](https://www.devmedia.com.br/usando-generics-em-java/28981) nessa interface.
 
 ```java
 // 1
@@ -40,14 +41,14 @@ public interface Playlist {
 ```java
 // 1
 public class Video {
-    private String nome;
+    private String name;
 
-    public Video(String nome) {
-        this.nome = nome;
+    public Video(String name) {
+        this.name = name;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 }
 ```
@@ -58,17 +59,17 @@ public class Video {
 // 1
 public class VideoPlaylist implements Playlist {
     private Video[] videos;
-    private int tamanho;
+    private int size;
 
-    public VideoPlaylist(int tamanho) {
-        this.videos = new Video[tamanho];
-        this.tamanho = 0;
+    public VideoPlaylist(int size) {
+        this.videos = new Video[size];
+        this.size = 0;
     }
 
     public void addVideo(Video video) {
-        if (tamanho < videos.length) {
-            videos[tamanho] = video;
-            tamanho++;
+        if (size < videos.length) {
+            videos[size] = video;
+            size++;
         }
     }
 
@@ -85,7 +86,7 @@ public class VideoPlaylist implements Playlist {
 // 1
 public class VideoPlaylistIterator implements Iterator<Video> {
     private Video[] videos;
-    private int posicao = 0;
+    private int position = 0;
 
     public VideoPlaylistIterator(Video[] videos) {
         this.videos = videos;
@@ -93,12 +94,12 @@ public class VideoPlaylistIterator implements Iterator<Video> {
 
     @Override
     public boolean hasNext() {
-        return posicao < videos.length && videos[posicao] != null;
+        return position < videos.length && videos[position] != null;
     }
 
     @Override
     public Video next() {
-        return videos[posicao++];
+        return videos[position++];
     }
 }
 ```
@@ -112,7 +113,7 @@ public class VideoPlaylistIterator implements Iterator<Video> {
 Aqui está como você pode usar o padrão Iterator para navegar por uma playlist de vídeos.
 
 ```java
-public class StreamingApp {
+public class Application {
     public static void main(String[] args) {
         //1
         VideoPlaylist playlist = new VideoPlaylist(5);
@@ -126,7 +127,7 @@ public class StreamingApp {
         //3
         while (iterator.hasNext()) {
             Video video = iterator.next();
-            System.out.println("Reproduzindo: " + video.getNome());
+            System.out.println("Reproduzindo: " + video.getName());
         }
     }
 }
@@ -159,7 +160,6 @@ O padrão **Iterator** é útil quando:
 ### Utilização mundo real🌎
 
 - **Java Collections Framework:** O padrão Iterator é amplamente utilizado em coleções como `ArrayList`, `HashSet`, e `LinkedList` para permitir que os usuários percorram os elementos dessas coleções sem expor sua implementação interna.
-- **Sistemas de armazenamento de dados:** Em bancos de dados ou sistemas de arquivos, os iteradores são usados para percorrer conjuntos de resultados ou listas de arquivos.
 - **Interfaces de usuário:** Componentes de UI que exibem listas ou grades de elementos frequentemente usam iteradores para percorrer e exibir os itens de forma consistente.
 
 ---

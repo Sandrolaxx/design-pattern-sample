@@ -94,7 +94,7 @@ public class Sub implements Expression {
 Agora vamos construir uma expressão utilizando o padrão Interpreter para interpretar expressões como `10 + 5 - 3`.
 
 ```java
-public class Calculator {
+public class Application {
     public static void main(String[] args) {
         //1
         Expression expressao = new Sub(

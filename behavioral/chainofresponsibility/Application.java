@@ -1,8 +1,9 @@
 package behavioral.chainofresponsibility;
 
-public class SupportClient {
+public class Application {
 
     public static void main(String[] args) {
+
         Support n1 = new TechnicalLevelOne();
         Support n2 = new TechnicalLevelTwo();
         Support n3 = new TechnicalLevelThree();
@@ -21,5 +22,6 @@ public class SupportClient {
 
         System.out.println("\nChamado 4: Problema desconhecido");
         n1.solveProblem("unknown");
+        
     }
 }
