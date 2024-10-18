@@ -2,6 +2,7 @@ package behavioral.templatemethod;
 
 public class Application {
     public static void main(String[] args) {
+        
         IAcquirer stone = new Stone();
         IAcquirer cielo = new Cielo();
         IAcquirer rede = new Rede();
@@ -14,6 +15,7 @@ public class Application {
 
         System.out.println("\nProcessando transação na Rede:");
         rede.processTransaction();
+
     }
 
 }

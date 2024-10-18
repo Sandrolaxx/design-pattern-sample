@@ -7,4 +7,5 @@ public interface ISubject {
     void removeObserver(IObserver o);
  
     void notifyObservers();
+    
 }
